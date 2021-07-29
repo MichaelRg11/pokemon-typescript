@@ -15,7 +15,7 @@ export const CardComponet = ({ url }: Props) => {
 
   return (
     <div>
-      <Card color={`${colorAssign(data!.types)}`}>
+      <Card color={colorAssign(data!.types)} border={`${colorAssign(data!.types)}`}>
         <Title color='#070707'>{capitalizeFirstLetter(data!.name)}</Title>
         <p>Heigth: {data!.height}</p>
         <p>Weigth: {data!.weight}</p>

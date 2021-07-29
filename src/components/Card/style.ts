@@ -2,12 +2,14 @@ import styled from 'styled-components';
 
 interface propsCard {
   color: string;
+  border: string;
 }
 
 export const Card = styled.article<propsCard>`
   width: 350px;
   height: 180px;
   border-radius: 30px;
+  border: 2px solid ${({ border }) => border};
   padding: 10px 20px;
   background:  ${({ color }) => color};
 `
