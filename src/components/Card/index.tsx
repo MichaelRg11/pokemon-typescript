@@ -2,8 +2,12 @@ import { capitalizeFirstLetter, colorAssign } from '../../helpers';
 import { Card, Title } from './style';
 import useFetch from '../../hooks/useFetch';
 
-export const CardComponet = () => {
-  const { data, loading, error } = useFetch('https://pokeapi.co/api/v2/pokemon/102/')
+interface Props {
+  url: string;
+}
+
+export const CardComponet = ({ url }: Props) => {
+  const { data, loading, error } = useFetch(url)
 
   if (loading) return <></>
 
