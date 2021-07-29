@@ -6,14 +6,11 @@ export const capitalizeFirstLetter = (value: string) => {
 
 export const colorAssign = (data: Type[]) => {
   const colorPrimary = typesPokemon[data[0].type.name];
-  const colorSecond = data[1] ? typesPokemon[data[1].type.name] : undefined;
+  const colorSecond = typesPokemon[data[1]?.type.name];
   return colorSecond ? `linear-gradient(0deg, ${colorPrimary}0.5) 0%, ${colorSecond}0.5) 100%)` : `${colorPrimary}0.5)`;
 }
 
-export const colorBorder = (data: Type[]) => {
-  const colorPrimary = typesPokemon[data[0].type.name];
-  return `${colorPrimary}1)`;
-}
+export const colorBorder = (data: Type[]) => `${typesPokemon[data[0].type.name]}1)`;
 
 const typesPokemon: any = {
   normal: 'rgb(188, 180, 167, ',

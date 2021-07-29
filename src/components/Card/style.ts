@@ -6,10 +6,10 @@ interface propsCard {
 }
 
 export const Card = styled.article<propsCard>`
-  width: 350px;
+  width: 100%;
   height: 180px;
   border-radius: 30px;
-  border: 2px solid ${({ border }) => border};
+  border: 1px solid ${({ border }) => border};
   padding: 10px 20px;
   background:  ${({ color }) => color};
 `

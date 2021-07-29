@@ -6,6 +6,6 @@ export const Content = styled.div`
   display: grid;
   gap: 1rem;
   grid-auto-flow: dense;
-  grid-auto-rows: 15rem;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  grid-auto-rows: 1.5fr;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1.5fr));
 `

@@ -11,6 +11,13 @@ export const ListCard = () => {
       <CardComponet url='https://pokeapi.co/api/v2/pokemon/106/' />
       <CardComponet url='https://pokeapi.co/api/v2/pokemon/107/' />
       <CardComponet url='https://pokeapi.co/api/v2/pokemon/120/' />
+      <CardComponet url='https://pokeapi.co/api/v2/pokemon/132/' />
+      <CardComponet url='https://pokeapi.co/api/v2/pokemon/123/' />
+      <CardComponet url='https://pokeapi.co/api/v2/pokemon/134/' />
+      <CardComponet url='https://pokeapi.co/api/v2/pokemon/135/' />
+      <CardComponet url='https://pokeapi.co/api/v2/pokemon/136/' />
+      <CardComponet url='https://pokeapi.co/api/v2/pokemon/137/' />
+      <CardComponet url='https://pokeapi.co/api/v2/pokemon/130/' />
     </Content>
   )
 }
