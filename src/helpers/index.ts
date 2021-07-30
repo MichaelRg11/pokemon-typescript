@@ -10,7 +10,7 @@ export const colorAssign = (data: Type[]) => {
   return colorSecond ? `linear-gradient(0deg, ${colorPrimary}0.5) 0%, ${colorSecond}0.5) 100%)` : `${colorPrimary}0.5)`;
 }
 
-export const colorBorder = (data: Type[]) => `${typesPokemon[data[0].type.name]}1)`;
+export const colorBorder = (value: string) => `${typesPokemon[value]}1)`;
 
 const typesPokemon: any = {
   normal: 'rgb(188, 180, 167, ',

@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Welcome } from '../interfaces/pokemon';
 
-const useFetch = (url: string) => {
-  const [data, setData] = useState<Welcome>();
+const useFetch = <T> (url: string) => {
+  const [data, setData] = useState<T>();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 

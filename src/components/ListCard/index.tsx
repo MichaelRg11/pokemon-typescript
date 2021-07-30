@@ -1,23 +1,26 @@
+import { useState } from 'react';
+import useFetch from '../../hooks/useFetch';
+import useNearScreen from '../../hooks/useNearScreen';
+import { Welcome } from '../../interfaces/listPokemon';
 import { CardComponet } from './../Card/index';
 import { Content } from './style';
 
 export const ListCard = () => {
+  const [url, setUrl] = useState('https://pokeapi.co/api/v2/pokemon?offset=30&limit=30')
+  const { data, loading, error } = useFetch<Welcome>(url);
+  const { isNearScreen, fromRef } = useNearScreen()
+  console.log("🚀 ~ file: index.tsx ~ line 12 ~ ListCard ~ isNearScreen", isNearScreen)
+
+
+  if (loading) <>;</>;
+  if (error) <>;</>
+
   return (
     <Content>
-      <CardComponet url='https://pokeapi.co/api/v2/pokemon/102/' />
-      <CardComponet url='https://pokeapi.co/api/v2/pokemon/103/' />
-      <CardComponet url='https://pokeapi.co/api/v2/pokemon/104/' />
-      <CardComponet url='https://pokeapi.co/api/v2/pokemon/105/' />
-      <CardComponet url='https://pokeapi.co/api/v2/pokemon/106/' />
-      <CardComponet url='https://pokeapi.co/api/v2/pokemon/107/' />
-      <CardComponet url='https://pokeapi.co/api/v2/pokemon/120/' />
-      <CardComponet url='https://pokeapi.co/api/v2/pokemon/132/' />
-      <CardComponet url='https://pokeapi.co/api/v2/pokemon/123/' />
-      <CardComponet url='https://pokeapi.co/api/v2/pokemon/134/' />
-      <CardComponet url='https://pokeapi.co/api/v2/pokemon/135/' />
-      <CardComponet url='https://pokeapi.co/api/v2/pokemon/136/' />
-      <CardComponet url='https://pokeapi.co/api/v2/pokemon/137/' />
-      <CardComponet url='https://pokeapi.co/api/v2/pokemon/130/' />
+      {data?.results.map(item => {
+        return <CardComponet url={item.url} />;
+      })}
+      <div id='ref' ref={fromRef}></div>
     </Content>
   )
 }

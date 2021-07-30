@@ -7,5 +7,5 @@ export const Content = styled.div`
   gap: 1rem;
   grid-auto-flow: dense;
   grid-auto-rows: 1.5fr;
-  grid-template-columns: repeat(auto-fill, minmax(20rem, 1.5fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 `
