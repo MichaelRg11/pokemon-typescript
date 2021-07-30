@@ -13,7 +13,10 @@ export const ListCard = () => {
 
 
   if (loading) <>;</>;
+
   if (error) <>;</>
+
+  setUrl(data!.next)
 
   return (
     <Content>
