@@ -28,7 +28,7 @@ const typesPokemon: any = {
   bug: 'rgb(152, 166, 130, ',
   dragon: 'rgb(145, 137, 186, ',
   ghost: 'rgb(175, 164, 243, ',
-  sinister: 'rgb(148, 120, 116, ',
+  dark: 'rgb(148, 120, 116, ',
   steel: 'rgb(145, 180, 210, ',
   fairy: 'rgb(230, 111, 175, ',
 }

@@ -1,29 +1,45 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Loading } from '../../assets/style';
 import useFetch from '../../hooks/useFetch';
 import useNearScreen from '../../hooks/useNearScreen';
 import { Welcome } from '../../interfaces/listPokemon';
+import { CardError } from '../CardError';
 import { CardComponet } from './../Card/index';
 import { Content } from './style';
 
 export const ListCard = () => {
-  const [url, setUrl] = useState('https://pokeapi.co/api/v2/pokemon?offset=30&limit=30')
+  const [url, setUrl] = useState('https://pokeapi.co/api/v2/pokemon?limit=30')
   const { data, loading, error } = useFetch<Welcome>(url);
   const { isNearScreen, fromRef } = useNearScreen()
-  console.log("🚀 ~ file: index.tsx ~ line 12 ~ ListCard ~ isNearScreen", isNearScreen)
+
+  useEffect(() => {
+    if (isNearScreen && !loading) {
+      if (data?.next) {
+        setUrl(data!.next)
+      }
+    }
+  }, [isNearScreen])
 
 
-  if (loading) <>;</>;
+  if (loading) return <Loading />;
 
-  if (error) <>;</>
+  if (error) return <CardError />;
 
-  setUrl(data!.next)
 
   return (
     <Content>
-      {data?.results.map(item => {
-        return <CardComponet url={item.url} />;
+      {data?.results.map((item, index) => {
+        if (data.results.length === index + 1) {
+          return (
+            <>
+              <CardComponet key={index} url={item.url} />
+            </>
+          );
+        } else {
+          return (<CardComponet key={index} url={item.url} />);
+        }
       })}
-      <div id='ref' ref={fromRef}></div>
+      <div id='ref' ref={fromRef} />
     </Content>
   )
 }

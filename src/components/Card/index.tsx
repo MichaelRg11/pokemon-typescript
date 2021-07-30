@@ -1,18 +1,20 @@
 import { capitalizeFirstLetter, colorAssign, colorBorder } from '../../helpers';
-import { Button, Card, P, Title } from './style';
+import { Button, Card, Img, P, Title } from './style';
 import useFetch from '../../hooks/useFetch';
 import { Welcome } from '../../interfaces/pokemon';
+import { Loading } from '../../assets/style';
+import { useLoaderImg } from '../../hooks/useLoaderImg';
+import { CardError } from '../CardError';
 
-interface Props {
-  url: string;
-}
+interface Props { url: string; }
 
 export const CardComponet = ({ url }: Props) => {
   const { data, loading, error } = useFetch<Welcome>(url)
+  const { loaded, ref, onLoad } = useLoaderImg()
 
-  if (loading) return <></>
+  if (loading) return <Loading />
 
-  if (error) return <></>
+  if (error) return <CardError />
 
   return (
     <div>
@@ -31,7 +33,7 @@ export const CardComponet = ({ url }: Props) => {
           })}
         </div>
         <div>
-          <img src={data!.sprites.other!.dream_world.front_default} alt={data!.sprites.other?.dream_world.front_default} style={{ maxHeight: '120px', maxWidth: '140px' }} />
+          <Img src={data!.sprites.other!.dream_world.front_default} alt={data!.sprites.other?.dream_world.front_default} ref={ref} onLoad={onLoad} hidden={!loaded} />
         </div>
       </Card>
     </div>

@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react'
 
 export default function useNearScreen () {
   const [isNearScreen, setShow] = useState(false)
-  const fromRef = useRef<HTMLElement>() as React.MutableRefObject<HTMLInputElement>
+  const fromRef = useRef<HTMLDivElement>(null) as React.MutableRefObject<HTMLDivElement>
 
   useEffect(() => {
     let observer: any
@@ -12,6 +12,7 @@ export default function useNearScreen () {
       const el = entries[0]
       if (el.isIntersecting) {
         setShow(true)
+        observer = true
       } else {
         setShow(false)
       }
@@ -21,7 +22,7 @@ export default function useNearScreen () {
       typeof IntersectionObserver
     ).then(() => {
       observer = new IntersectionObserver(onChange, {
-        rootMargin: '100px'
+        rootMargin: '400px'
       })
 
       if (element) observer.observe(element)

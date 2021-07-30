@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { fadeIn } from '../../assets/style';
 
 interface propsCard {
   color: string;
@@ -7,7 +8,7 @@ interface propsCard {
 
 export const Card = styled.article<propsCard>`
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -15,6 +16,7 @@ export const Card = styled.article<propsCard>`
   border: 1px solid ${({ border }) => border};
   padding: 20px 20px;
   background:  ${({ color }) => color};
+  ${fadeIn({ time: '1.2s' })}
 `
 
 interface propsTitle {
@@ -49,4 +51,10 @@ export const Button = styled.button<propsButton>`
   font-size: 18px;
   margin: 10px 5px 0 10px;
   background-color: ${({ color }) => color};
+`
+
+export const Img = styled.img`
+  height: 120px;
+  width: 140px;
+  ${fadeIn({ time: '0.8s' })}
 `
