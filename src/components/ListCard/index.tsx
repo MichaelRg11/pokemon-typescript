@@ -29,15 +29,7 @@ export const ListCard = () => {
   return (
     <Content>
       {data?.results.map((item, index) => {
-        if (data.results.length === index + 1) {
-          return (
-            <>
-              <CardComponet key={index} url={item.url} />
-            </>
-          );
-        } else {
-          return (<CardComponet key={index} url={item.url} />);
-        }
+        return (<CardComponet key={index} url={item.url} />);
       })}
       <div id='ref' ref={fromRef} />
     </Content>

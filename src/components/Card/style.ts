@@ -16,6 +16,7 @@ export const Card = styled.article<propsCard>`
   border: 1px solid ${({ border }) => border};
   padding: 20px 20px;
   background:  ${({ color }) => color};
+  cursor: pointer;
   ${fadeIn({ time: '1.2s' })}
 `
 

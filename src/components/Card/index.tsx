@@ -5,20 +5,23 @@ import { Welcome } from '../../interfaces/pokemon';
 import { Loading } from '../../assets/style';
 import { useLoaderImg } from '../../hooks/useLoaderImg';
 import { CardError } from '../CardError';
+import Modal from '../Modal';
+import { useState } from 'react';
 
 interface Props { url: string; }
 
 export const CardComponet = ({ url }: Props) => {
   const { data, loading, error } = useFetch<Welcome>(url)
   const { loaded, ref, onLoad } = useLoaderImg()
+  const [value, setValue] = useState(false)
 
   if (loading) return <Loading />
 
   if (error) return <CardError />
 
   return (
-    <div>
-      <Card color={colorAssign(data!.types)} border={colorBorder(data!.types[0].type.name)}>
+    <>
+      <Card color={colorAssign(data!.types)} onClick={() => setValue(true)} border={colorBorder(data!.types[0].type.name)}>
         <div>
           <Title color='#070707'>{capitalizeFirstLetter(data!.name)}</Title>
           <P>Heigth: {data!.height}</P>
@@ -36,6 +39,7 @@ export const CardComponet = ({ url }: Props) => {
           <Img src={data!.sprites.other!.dream_world.front_default} alt={data!.sprites.other?.dream_world.front_default} ref={ref} onLoad={onLoad} hidden={!loaded} />
         </div>
       </Card>
-    </div>
+      <Modal show={value} setShowModal={setValue} msg={`${data?.abilities[0]!.ability!.name}`} err={true} />
+    </>
   )
 }
