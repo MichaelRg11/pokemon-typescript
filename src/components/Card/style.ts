@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fadeIn } from '../../assets/style';
+import { fadeIn } from '../../assets/style/style';
 
 interface propsCard {
   color: string;
@@ -8,7 +8,6 @@ interface propsCard {
 
 export const Card = styled.article<propsCard>`
   width: 100%;
-  /* height: 100%; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,6 +16,7 @@ export const Card = styled.article<propsCard>`
   padding: 20px 20px;
   background:  ${({ color }) => color};
   cursor: pointer;
+  box-shadow: 0 0px 14px rgb(0, 0, 0, 0.2);
   ${fadeIn({ time: '1.2s' })}
 `
 

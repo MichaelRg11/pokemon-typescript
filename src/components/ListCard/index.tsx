@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Loading } from '../../assets/style';
+import { Loading } from '../../assets/style/style';
 import useFetch from '../../hooks/useFetch';
 import useNearScreen from '../../hooks/useNearScreen';
-import { Welcome } from '../../interfaces/listPokemon';
+import { Welcome } from '../../interfaces/listPokemons';
 import { CardError } from '../CardError';
 import { CardComponet } from './../Card/index';
 import { Content } from './style';
@@ -16,7 +16,7 @@ export const ListCard = () => {
     if (isNearScreen && !loading && data?.next) {
       setUrl(data!.next)
     }
-  }, [isNearScreen, loading, data])
+  }, [isNearScreen, loading])
 
 
   if (loading) return <Loading />;
@@ -29,7 +29,7 @@ export const ListCard = () => {
       {data?.results.map((item, index) => {
         return (<CardComponet key={index} url={item.url} />);
       })}
-      <div id='ref' ref={fromRef} />
+      <div ref={fromRef} />
     </Content>
   )
 }

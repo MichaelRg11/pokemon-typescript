@@ -14,6 +14,64 @@ const fadeInKeyFrames = keyframes`
 
 export const fadeIn = ({ time = '1s', type = 'ease' } = {}) => css`animation: ${time} ${fadeInKeyFrames} ${type}`
 
+// pequeño rebote
+const bounceLeftKeyFrames = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-500px);
+  }
+  /* 50% {
+    opacity: 0.5;
+    transform: translateX(-250px);
+  } */
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`
+
+export const bounceLeft = ({ time = '0.5s', type = 'ease' } = {}) =>
+  css`
+    animation: ${time} ${bounceLeftKeyFrames} ${type};
+`
+
+const bounceDownKeyFrames = keyframes`
+  0% {
+    margin-top: 20px;
+  }
+  25% {
+    margin-top: 30px;
+  }
+  40%{
+    margin-top: 20px;
+  }
+  65%{
+    margin-top: 30px;
+  }
+  100% {
+    margin-top: 20px;
+  }
+`
+
+export const bounceDown = ({ time = '1s', type = 'ease' } = {}) =>
+  css`
+   animation: ${time} ${bounceDownKeyFrames} ${type};
+`
+
+const bounceDownKeyFrames2 = keyframes`
+  from {
+    top: -100px;
+  }
+  to {
+    top: 0px;
+  }
+`
+
+export const bounceDown2 = ({ time = '1s', type = 'ease' } = {}) =>
+  css`
+    animation: ${time} ${bounceDownKeyFrames2} ${type};
+`
+
 // loading
 
 export const Loading = styled.div`
