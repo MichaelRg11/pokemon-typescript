@@ -13,12 +13,10 @@ export const ListCard = () => {
   const { isNearScreen, fromRef } = useNearScreen()
 
   useEffect(() => {
-    if (isNearScreen && !loading) {
-      if (data?.next) {
-        setUrl(data!.next)
-      }
+    if (isNearScreen && !loading && data?.next) {
+      setUrl(data!.next)
     }
-  }, [isNearScreen])
+  }, [isNearScreen, loading, data])
 
 
   if (loading) return <Loading />;
