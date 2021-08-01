@@ -9,7 +9,7 @@ import { Content } from './style';
 
 export const ListCard = () => {
   const [url, setUrl] = useState('https://pokeapi.co/api/v2/pokemon?limit=30')
-  const { data, loading, error } = useFetch<Welcome>(url);
+  const { data, loading, error } = useFetch<Welcome>(url, true);
   const { isNearScreen, fromRef } = useNearScreen()
 
   useEffect(() => {

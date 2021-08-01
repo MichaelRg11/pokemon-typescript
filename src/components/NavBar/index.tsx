@@ -37,8 +37,3 @@ export const NavBar = () => {
     </>
   )
 }
-
-const styleLogo = {
-  height: '80px',
-  cursor: 'pointer',
-}

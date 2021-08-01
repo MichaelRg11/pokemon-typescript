@@ -2,8 +2,6 @@ import styled, { css } from "styled-components";
 import { NavLink } from 'react-router-dom';
 import { bounceDown, bounceDown2 } from "../../assets/style/style";
 import { AiOutlineAlignRight, AiOutlineClose } from "react-icons/ai";
-import { FaLeaf } from 'react-icons/fa';
-
 interface props {
   fixed?: boolean;
 }
@@ -38,11 +36,6 @@ export const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   background-color: transparent;
-`
-
-export const Leaf = styled(FaLeaf)`
-  font-size: 35px;
-  color: green;
 `
 
 export const NavItem = styled.li`

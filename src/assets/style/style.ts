@@ -30,10 +30,7 @@ const bounceLeftKeyFrames = keyframes`
   }
 `
 
-export const bounceLeft = ({ time = '0.5s', type = 'ease' } = {}) =>
-  css`
-    animation: ${time} ${bounceLeftKeyFrames} ${type};
-`
+export const bounceLeft = ({ time = '0.5s', type = 'ease' } = {}) => css` animation: ${time} ${bounceLeftKeyFrames} ${type}; `
 
 const bounceDownKeyFrames = keyframes`
   0% {
@@ -67,15 +64,12 @@ const bounceDownKeyFrames2 = keyframes`
   }
 `
 
-export const bounceDown2 = ({ time = '1s', type = 'ease' } = {}) =>
-  css`
-    animation: ${time} ${bounceDownKeyFrames2} ${type};
-`
+export const bounceDown2 = ({ time = '1s', type = 'ease' } = {}) => css` animation: ${time} ${bounceDownKeyFrames2} ${type};`
 
 // loading
 
 export const Loading = styled.div`
-  color: #9c20aa;
+  color: #e60012;
   font-size: 40px;
   text-indent: -9999em;
   overflow: hidden;

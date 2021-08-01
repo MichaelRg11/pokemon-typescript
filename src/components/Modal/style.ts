@@ -56,8 +56,8 @@ export const ModalBody = styled.div`
 
 export const Close = styled.button`
   position: absolute;
-  right: 5px;
-  top: 5px;
+  right: 0px;
+  top: 0px;
   width: 30px;
   height: 30px;
   border-radius: 50%;

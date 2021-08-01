@@ -8,6 +8,7 @@ interface propsCard {
 
 export const Card = styled.article<propsCard>`
   width: 100%;
+  height: 180px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,6 +30,13 @@ export const Title = styled.h4<propsTitle>`
   font-weight: 500;
   margin-bottom: 10px;
   color: ${({ color }) => color};
+
+  overflow: hidden; 
+  text-overflow: ellipsis;
+  display: -webkit-box; 
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  -webkit-overflow: hidden;
 `
 
 export const P = styled.p`
@@ -39,7 +47,6 @@ export const P = styled.p`
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 1;
   -webkit-overflow: hidden;
-
 `
 
 interface propsButton {
@@ -47,7 +54,7 @@ interface propsButton {
 }
 
 export const Button = styled.button<propsButton>`
-  padding: 5px 15px;
+  padding: 5px 10px;
   border-radius: 5px;
   font-size: 18px;
   margin: 10px 5px 0 10px;
@@ -55,7 +62,8 @@ export const Button = styled.button<propsButton>`
 `
 
 export const Img = styled.img`
-  height: 120px;
+  height: auto;
+  max-height: 160px;
   width: 140px;
   ${fadeIn({ time: '0.8s' })}
 `
