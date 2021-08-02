@@ -1,5 +1,9 @@
 # `Pokedex-Typescrip` 
 
+## `Instalaciones necesarias` 
+
+_Se debe tener previa mente instalado Node.js y Typescript_
+
 ## `Intalación` 🚀
 
 _Después de haber clonado el repositorio se deben instalar las dependencias._
