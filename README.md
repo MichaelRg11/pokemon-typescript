@@ -2,7 +2,7 @@
 
 ## `Instalaciones necesarias` 
 
-_Se debe tener previa mente instalado Node.js y Typescript_
+_Se debe tener previa mente instalado Node.js y Typescript._
 
 ## `Intalación` 🚀
 
