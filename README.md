@@ -35,3 +35,7 @@ _Es una librería que permite utilizar importaciones ES6 para incluir solo los �
 
 ### React Router Dom - "react-router-dom": "^5.2.0" 
 _Es una librería que nos permite tener un manejo más flexible del enrutado de la aplicación._
+
+## `Link Firebase`🌍
+
+[pokedex-da45a.web.app](pokedex-da45a.web.app)
